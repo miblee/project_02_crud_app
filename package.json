@@ -1,0 +1,19 @@
+{
+  "name": "project_02_build_an_app",
+  "version": "1.0.0",
+  "description": "Project 2: Building Your First Full-stack Application",
+  "main": "apps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.21"
+  }
+}
