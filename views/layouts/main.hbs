@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title></title>
@@ -8,31 +8,39 @@
     integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Covered+By+Your+Grace" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>Things I've Heard People Say</h1>
+
+
+{{{ body }}}
+
+
+
+  <script src="/main.js"></script>
+</body>
+</html>
+
+
+
+{{!--   <h1>Things I've Heard People Say</h1>
   <article class=input>
     <form action="/" method="get" accept-charset="utf-8">
       <input type="text/plain" name="author" placeholder="author">
       <input type="text/plain" name="source" placeholder="source/book title">
       <input type="text/plain" name="quote" placeholder="quote">
-      <button>Submit Quote</button>
-      <button>Search</button>
+      <button id="submit">Submit</button>
+      <button id="search">Search</button>
     </form>
   </article>
   <article class=faves>
 
-  </article>
+  </article> --}}
 
 
   <!--
     By setting type to "text/template", it's not a script that the browser can understand,
     and so the browser will simply ignore it.
   -->
-
-
-  <script src="main.js"></script>
-</body>
-</html>

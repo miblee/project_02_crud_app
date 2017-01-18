@@ -2,7 +2,7 @@
   "name": "project_02_build_an_app",
   "version": "1.0.0",
   "description": "Project 2: Building Your First Full-stack Application",
-  "main": "apps.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

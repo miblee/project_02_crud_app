@@ -1,0 +1,18 @@
+<h1>Things I've Heard People Say</h1>
+
+<article class=input>
+  <form action="/insert" method="post" accept-charset="utf-8">
+    <input type="text/plain" name="author" placeholder="author">
+    <input type="text/plain" name="source" placeholder="source/book title">
+    <input type="text/plain" name="quote" placeholder="quote">
+    <button id="submit">Submit</button>
+    <button id="search">Search</button>
+  </form>
+</article>
+
+<article class="faves">
+  <div id="quotebox">
+  {{author}} once said in {{source}}:<br>
+  {{quote}}
+  </div>
+</article>
