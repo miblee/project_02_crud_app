@@ -11,8 +11,10 @@
 </article>
 
 <article class="faves">
-  <div id="quotebox">
-  {{author}} once said in {{source}}:<br>
-  {{quote}}
-  </div>
+  {{#each quotes}}
+    <div id="quotebox">
+    {{author}} once said in {{source}}:<br>
+    {{quote}}
+    </div>
+  {{/each}}
 </article>

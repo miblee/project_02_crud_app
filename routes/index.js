@@ -7,14 +7,31 @@ var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/proj2';
 
 // GET home page
 router.get('/', function(req, res, next){
-  res.render('index');
+  // renddr a template with all the quotes
+  // connect to mongo
+  // find all the quotes
+  // disconnect from db
+  // render index template with quotes
+  mongo.connect(url, function(err, db){
+    assert.equal(null, err);
+    db.collection('quotes').find().toArray(function(err, quotes){
+      db.close();
+      var data = {
+        quotes: quotes
+      }
+      // render always takes an object
+      res.render('index', data);
+    })
+  })
 })
+
+
 
 
 router.get('/data', function(req, res, next){
   mongo.connect(url, function(err, db){
     assert.equal(null, err);
-    var cursor = db.collection('quotes').find().toArrary(function(err, data){
+    var cursor = db.collection('quotes').find().toArray(function(err, data){
       db.close();
       var quoteObj = {
       source: req.body.source,
@@ -52,6 +69,20 @@ router.post('/update', function(req, res, next){
 
 router.post('/delete', function(req, res, next){
 
+})
+
+
+// GET /search?author=Michelle
+router.get('/search', function(req, res, next){
+  var author = req.query.author;
+  mongo.connect(url, function(err, db){
+    assert.equal(null, err);
+    db.collection('quotes').find({'author': author}).toArray(function(err, quotes){
+      db.close();
+      // show the client the results
+      res.render('index', {quotes: quotes})
+    })
+  });
 })
 
 module.exports = router;
