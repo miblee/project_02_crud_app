@@ -1,4 +1,4 @@
-<h1>Things I've Heard People Say <img src="talkinghead.jpg"></h1>
+<h1>Things I've Heard People Say <img id="talkinghead" src="talkinghead.jpg"></h1>
 
 <article class="input">
   <form action="/insert" method="post" accept-charset="utf-8">
@@ -12,14 +12,15 @@
 
 <article class="faves">
   {{#each quotes}}
-    <div id="quotebox">
-      <div id="quotebar">
-        <img src="edit-button.png">
+    <div class="quotebox">
+      <div class="quotebar">
+        <img class="barImgs edit-button" src="edit-button.png">
+        <img class="barImgs delete-button" src="trash.png">
       </div>
-      <div id="quoteID">
+      <div class="quoteID">
         <span>{{author}}</span> from <span>"{{source}}":</span>
       </div>
-      <div id="quoteText">
+      <div class="quoteText">
         {{quote}}
       </div>
     </div>

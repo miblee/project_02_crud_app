@@ -3,32 +3,65 @@ h1 {
   text-align: -webkit-center;
 }
 
-.input {
-  text-align: -webkit-center;
-  border: dashed black 1px;
-  padding: 15px;
-}
 
 body {
   font-family: 'Covered By Your Grace', cursive;
   background-color: Bisque;
 }
 
-#quotebox {
+.input {
+  text-align: -webkit-center;
+  border: dashed black 1px;
+  padding: 15px;
+}
+
+.barImgs {
+  width: 12px;
+  height: 12px;
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+
+
+.delete-button:hover {
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  cursor: pointer;
+}
+
+.save-button:hover{
+  cursor:pointer;
+}
+
+#talkinghead {
+  width: 30px;
+  height: 30px;
+  text-align: right;
+}
+
+.quotebar {
+  padding: 0;
+  margin: 0;
+}
+
+.quotebox {
   display: inline-block;
   background-color: pink;
   border: solid grey 1px;
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   max-height: 300px;
   max-width: 300px;
 }
 
-#quoteID {
+.quoteID {
   /*border-bottom: solid black 1px;*/
   /*font-family: 'Rock Salt', cursive;*/
 }
 
-#quoteText {
+.quoteText {
   overflow: scroll;
   border-top: solid black 1px;
 }
@@ -55,13 +88,6 @@ body {
   height: 60px;
   /*background-color: #f5f5f5;*/
   text-align: -webkit-center;
-}
-
-
-img {
-  width: 30px;
-  height: 30px;
-  text-align: right;
 }
 
 
