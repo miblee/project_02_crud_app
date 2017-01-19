@@ -26,8 +26,6 @@ router.get('/', function(req, res, next){
 })
 
 
-
-
 router.get('/data', function(req, res, next){
   mongo.connect(url, function(err, db){
     assert.equal(null, err);
@@ -63,9 +61,11 @@ router.post('/insert', function(req, res, next){
   })
 })
 
+
 router.post('/update', function(req, res, next){
 
 })
+
 
 router.post('/delete', function(req, res, next){
 

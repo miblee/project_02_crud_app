@@ -1,4 +1,4 @@
-<h1>Things I've Heard People Say <img src="http://worldartsme.com/images/talking-head-clipart-1.jpg"></h1>
+<h1>Things I've Heard People Say <img src="talkinghead.jpg"></h1>
 
 <article class="input">
   <form action="/insert" method="post" accept-charset="utf-8">
@@ -13,8 +13,11 @@
 <article class="faves">
   {{#each quotes}}
     <div id="quotebox">
+      <div id="quotebar">
+        <img src="edit-button.png">
+      </div>
       <div id="quoteID">
-        <span>{{author}}</span> from <span>"{{source}}"</span>:
+        <span>{{author}}</span> from <span>"{{source}}":</span>
       </div>
       <div id="quoteText">
         {{quote}}
