@@ -1,9 +1,23 @@
 h1 {
   font-family: 'Amatic SC', cursive;
+  text-align: -webkit-center;
+}
+
+.input {
+  text-align: -webkit-center;
+  border: dashed black 1px;
+  padding: 15px;
 }
 
 body {
-  text-align: -webkit-center;
   font-family: 'Covered By Your Grace', cursive;
+  background-color: Bisque;
+}
+
+#quotebox {
+  display: inline-block;
+  overflow: scroll;
   background-color: pink;
+  border: solid grey 1px;
+  padding: 10px;
 }
