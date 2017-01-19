@@ -52,7 +52,7 @@ router.post('/insert', function(req, res, next){
 
   mongo.connect(url, function(err, db){
     assert.equal(null, err);
-    db.collection('quotes').insertOne(quoteObj, function(err, result){
+    db.collection('quotes').insert(quoteObj, function(err, result){
       assert.equal(null, err);
       console.log('Quote inserted!');
       db.close();

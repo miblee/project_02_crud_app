@@ -13,6 +13,7 @@ body {
   text-align: -webkit-center;
   border: dashed black 1px;
   padding: 15px;
+  margin: 30px;
 }
 
 .barImgs {
@@ -21,6 +22,7 @@ body {
   float: right;
   padding: 0;
   margin: 0;
+  /*visibility:hidden;*/
 }
 
 
@@ -42,6 +44,10 @@ body {
   text-align: right;
 }
 
+#talkinghead:hover {
+  cursor: pointer;
+}
+
 .quotebar {
   padding: 0;
   margin: 0;
@@ -54,15 +60,15 @@ body {
   padding: 0 10px 10px 10px;
   max-height: 300px;
   max-width: 300px;
-}
+/*  overflow-y: scroll;
+*/}
 
-.quoteID {
+.quoteBody {
   /*border-bottom: solid black 1px;*/
   /*font-family: 'Rock Salt', cursive;*/
 }
 
 .quoteText {
-  overflow: scroll;
   border-top: solid black 1px;
 }
 
