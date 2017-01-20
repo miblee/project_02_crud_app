@@ -6,26 +6,25 @@ var assert = require('assert');
 // URL that points to the db
 var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/proj2';
 
-// GET home page
-router.get('/', function(req, res, next){
-  // renddr a template with all the quotes
-  // connect to mongo
-  // find all the quotes
-  // disconnect from db
-  // render index template with quotes
+
+
+router.post('/insert', function(req, res, next){
+  var quoteObj = {
+    "source": req.body.source,
+    "author": req.body.author,
+    "quote": req.body.quote
+  }
+
   mongo.connect(url, function(err, db){
     assert.equal(null, err);
-    db.collection('quotes').find().toArray(function(err, quotes){
+    db.collection('quotes').insert(quoteObj, function(err, result){
+      assert.equal(null, err);
+      console.log('Quote inserted!');
       db.close();
-      var data = {
-        quotes: quotes
-      }
-      // render always takes an object
-      res.render('index', data);
+      res.redirect('/')
     })
   })
 })
-
 
 router.get('/data', function(req, res, next){
   mongo.connect(url, function(err, db){
@@ -44,20 +43,22 @@ router.get('/data', function(req, res, next){
 })
 
 
-router.post('/insert', function(req, res, next){
-  var quoteObj = {
-    "source": req.body.source,
-    "author": req.body.author,
-    "quote": req.body.quote
-  }
-
+// GET home page
+router.get('/', function(req, res, next){
+  // renddr a template with all the quotes
+  // connect to mongo
+  // find all the quotes
+  // disconnect from db
+  // render index template with quotes
   mongo.connect(url, function(err, db){
     assert.equal(null, err);
-    db.collection('quotes').insert(quoteObj, function(err, result){
-      assert.equal(null, err);
-      console.log('Quote inserted!');
+    db.collection('quotes').find().toArray(function(err, quotes){
       db.close();
-      res.redirect('/')
+      var data = {
+        quotes: quotes
+      }
+      // render always takes an object
+      res.render('index', data);
     })
   })
 })
@@ -93,7 +94,7 @@ router.post('/delete', function(req, res, next){
   mongo.connect(url, function(err, db){
     assert.equal(null, err);
     db.collection('quotes').deleteOne({"_id": ObjectID(quoteID)},
-      function(err, docs){
+      function(err, result){
         db.close();
         res.json(result)
       });

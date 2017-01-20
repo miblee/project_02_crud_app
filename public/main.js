@@ -13,19 +13,7 @@ $('#search').click(function(evt){
 })
 
 
-// ***** DELETE TARGETED POSTS *****
-$('.delete-button').click(function(evt){
-  var $quotebox = $(this).closest('.quotebox');
-  var quoteID = {"quoteID": $quotebox.find('.edit-button').attr('id')}
 
-  if (confirm('Are you sure? Deletes are immediate and irretrievable!')){
-    $.post('/delete', quoteID, function(res){
-      console.log('res');
-    });
-  } else {
-    console.log('deletion cancelled')
-  }
-})
 
 
 
@@ -73,3 +61,19 @@ $(document.body).on('click', '.save-button', function(evt){
   console.log(quoteObject);
   $.post('/update', quoteObject)
 });
+
+
+// ***** DELETE TARGETED POSTS *****
+$('.delete-button').click(function(evt){
+  var $quotebox = $(this).closest('.quotebox');
+  var quoteID = {"quoteID": $quotebox.find('.edit-button').attr('id')}
+
+  if (confirm('Are you sure? Deletes are immediate and irretrievable!')){
+    $.post('/delete', quoteID, function(res){
+      console.log('Success! Now just need to refresh/redirect to root somehow');
+      window.location.href = '/';
+    });
+  } else {
+    console.log('deletion cancelled')
+  }
+})
