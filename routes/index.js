@@ -63,7 +63,12 @@ router.post('/insert', function(req, res, next){
 
 
 router.post('/update', function(req, res, next){
-
+  // console.log('data received:', req);
+  // mongo.conect(url, function(err, db){
+  //   assert.equal(null, err);
+  //   var quoteToUpdate = db.collection('quotes').find({'_id': ObjectId(req.query.quoteID)})
+  //   db.collection('quotes').update(quoteToUpdate, ({author:req.body.author})
+  // })
 })
 
 

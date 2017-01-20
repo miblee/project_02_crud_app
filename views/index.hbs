@@ -14,8 +14,8 @@
   {{#each quotes}}
     <div class="quotebox">
       <div class="quotebar">
-        <img class="barImgs edit-button" src="edit-button.png">
-        <img class="barImgs delete-button" src="trash.png">
+        <img class="barImgs edit-button" id="{{_id}}" src="edit-button.png">
+        <img class="barImgs delete-button" id="{{_id}}" src="trash.png">
       </div>
       <div class="quoteBody">
         <p>
@@ -23,9 +23,7 @@
           <span class="source">{{source}}</span>":
         </p>
       </div>
-      <div class="quoteText">
-        {{quote}}
-      </div>
+      <div class="quoteText">{{quote}}</div>
     </div>
   {{/each}}
 </article>
