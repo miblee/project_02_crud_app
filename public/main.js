@@ -68,8 +68,8 @@ $(document.body).on('click', '.save-button', function(evt){
   };
 
   console.log(quoteObject);
-  $.post('/update', quoteObject, function(data){
-    console.log('Update sent!')
-  })
+  $.post('/update', quoteObject) //, function(data){
+    // console.log('Update sent!');
+  // })
 
 });

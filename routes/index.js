@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb');
+var ObjectID = require('mongodb').ObjectID
 var assert = require('assert');
 // URL that points to the db
 var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/proj2';
@@ -63,12 +64,26 @@ router.post('/insert', function(req, res, next){
 
 
 router.post('/update', function(req, res, next){
-  // console.log('data received:', req);
-  // mongo.conect(url, function(err, db){
-  //   assert.equal(null, err);
-  //   var quoteToUpdate = db.collection('quotes').find({'_id': ObjectId(req.query.quoteID)})
-  //   db.collection('quotes').update(quoteToUpdate, ({author:req.body.author})
-  // })
+
+  var quoteID = req.body.quoteID;
+  var source = req.body.source;
+  var author = req.body.author;
+  var quote = req.body.quote;
+
+  mongo.connect(url, function(err, db){
+    assert.equal(null, err);
+    // var quoteToUpdate = db.collection('quotes').find({'_id': ObjectID(quoteID)})
+    db.collection('quotes').updateOne(
+      {"_id": ObjectID(quoteID)},
+      {$set:
+        {'source':source, 'author':author, 'quote':quote}
+      },
+      function(err, result) {
+        db.close();
+        res.json(result);
+      }
+    )
+  })
 })
 
 
