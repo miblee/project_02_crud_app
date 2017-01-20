@@ -7,12 +7,10 @@ $('h1').click(function(evt){
 
 
 
-// ***** ONE DAY BUILD A FUNCTIONAL SEARCH BAR *****
+// ***** ONE DAY BUILD A FUNCTIONAL SEARCH BUTTON *****
 $('#search').click(function(evt){
   $.get('/search')
 })
-
-
 
 
 
@@ -29,11 +27,10 @@ $(document.body).on('click', '.edit-button', function(evt){
   $quotebox.find('.author').attr("contenteditable", "true");
   $quotebox.find('.quoteText').attr("contenteditable", "true");
   $quotebox.css('background-color', 'Aquamarine');
-  console.log('editing~')
 })
 
 
-// SEND EDITED CONTENT TO SERVER
+// ********* (U)PDATE ********* //
 $(document.body).on('click', '.save-button', function(evt){
 
   $(this).attr('class',"barImgs edit-button");
@@ -63,17 +60,14 @@ $(document.body).on('click', '.save-button', function(evt){
 });
 
 
-// ***** DELETE TARGETED POSTS *****
+//********* (D)ELETE ********* //
 $('.delete-button').click(function(evt){
   var $quotebox = $(this).closest('.quotebox');
   var quoteID = {"quoteID": $quotebox.find('.edit-button').attr('id')}
 
   if (confirm('Are you sure? Deletes are immediate and irretrievable!')){
     $.post('/delete', quoteID, function(res){
-      console.log('Success! Now just need to refresh/redirect to root somehow');
       window.location.href = '/';
     });
-  } else {
-    console.log('deletion cancelled')
-  }
+  };
 })

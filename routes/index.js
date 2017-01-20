@@ -7,7 +7,7 @@ var assert = require('assert');
 var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/proj2';
 
 
-
+// ********* (C)REATE! ********* //
 router.post('/insert', function(req, res, next){
   var quoteObj = {
     "source": req.body.source,
@@ -26,6 +26,8 @@ router.post('/insert', function(req, res, next){
   })
 })
 
+// ********* NOT SUPER DUPER WORKING YET, I THINK. DON'T LOOK! ********* //
+
 router.get('/data', function(req, res, next){
   mongo.connect(url, function(err, db){
     assert.equal(null, err);
@@ -43,7 +45,7 @@ router.get('/data', function(req, res, next){
 })
 
 
-// GET home page
+// ********* IS THIS MY (R)EAD? ********* //
 router.get('/', function(req, res, next){
   // renddr a template with all the quotes
   // connect to mongo
@@ -64,6 +66,7 @@ router.get('/', function(req, res, next){
 })
 
 
+// ********* (U)PDATE! ********* //
 router.post('/update', function(req, res, next){
 
   var quoteID = req.body.quoteID;
@@ -87,6 +90,7 @@ router.post('/update', function(req, res, next){
 })
 
 
+// ********* (D)ELETE! ********* //
 router.post('/delete', function(req, res, next){
 
   var quoteID = req.body.quoteID;
@@ -102,6 +106,8 @@ router.post('/delete', function(req, res, next){
   })
 })
 
+
+// ********* ALSO NOT SUPER DUPER WORKING YET. STOP READING HERE! ********* //
 
 // GET /search?author=Michelle
 router.get('/search', function(req, res, next){

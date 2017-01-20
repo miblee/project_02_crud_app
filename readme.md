@@ -1,74 +1,49 @@
-Project 2: Building Your First Full-stack Application
+# THINGS I'VE HEARD PEOPLE SAY
 
-Overview
+## Technologies Used
+- Node.js v7.2.0
+- jQuery v3.1.1
+- AJAX v4.0.21
+- Underscore v1.8.3 (script tag placed in main.hbs but not actually utilized anywhere)
+- Express v4.14.0
+- Handlebars v4.0.6
+- EJS v2.5.5
+- Bootstrap v3.3.7
+- Mongodb v2.2.21
+- Morgan v4.0.2 (ditto)
 
-This second project is your first foray into building a full-stack application. You'll be building a web application, which means you'll learn about what it takes to build a functional application from the ground up yourself.
 
-This is exciting! It's a lot, but we've given you the tools over the past few weeks, and you get to decide what you do with it. And you get to be creative in choosing what sort of application you want to build!
 
-You will be working individually for this project, and you'll be designing the app yourself. We hope you'll exercise creativity on this project, sketch some wireframes before you start, and write user stories to define what your users will want to do with the app.
+## Installation Instructions
+1. Fork this repo into own GitHub
+2. Git Clone <own GitHub repo url> on Bash
+3. npm install --save
 
-Remember to keep things small and focus on mastering the fundamentals – scope creep/feature creep is the biggest pitfall for any project!
 
-Technical Requirements
-
-Build a web application using Node and Express that responds to HTTP Requests and manipulates data.
-
-Your application MUST
-
-Persist Data from the client
-Return data to the client
-Modify persisted data
-Destroy persisted data
-Respond to GET and POST requests
-Serve static content
-Serve dynamic content
-Use a client-side templating library to render JSON from the server
-Use a server-side templating library to render HTML as a response
-Use a CSS framework
-Serve a favicon
-Be deployed online and accessible to the publically-accessible
-Your repo MUST
-
-Include wireframes that you designed during the planning process
-Include user stories
-Necessary Deliverables
-
-A working full-stack application, built by you, hosted somewhere on the internet
-A link to your hosted working app in the URL section of your Github repo
-A git repository hosted on Github, with a link to your hosted project, and frequent commits dating back to the very beginning of the project. Commit early, commit often.
-A readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
-Wireframes of your app, hosted somewhere & linked in your readme
+## User Stories
 A link in your readme.md to the publically-accessible user stories you created
-Suggested Ways to Get Started
+1. Who are we building it for, who the user is? — As a <type of user>
+2. What are we building, what is the intention? — I want <some goal or objective >
+3. Why are we building it, what value it bring for the user.? — So that <benefit, value>
 
-Plan
-Write User stories
-User stories define what a specific type of user wants to accomplish with your application. It's tempting to just make them todo lists for what needs to get done, but if you keep them small & focused on what a user cares about from their perspective, it'll help you know what to build!
-Pseudo code
-Wireframe
-Write naive code
-Read the docs
-Find a tutorial
-Commit early, commit often.
-Use git branching to try out ideas
-Potential Project Ideas
-Personal Tracker
+"Things I've Heard People Say" is for anyone who wants to save their favorite motivational quotes, jokes, life hacks, ice-breaker trivia, etc. on an ~~easily searchable,~~ editable web app. Personally, I built it to use it like a sort of bibliography page for whenever I need to encourage people at meetings or one-on-ones. It'll probably continue to be shaped by the needs/preferences of people who give last-minute pep-talks/lectures/guidances regularly. ~~But perhaps most importantly of all, I never have jokes at the top of my head so hopefully collecting them here will help make me A SOCIAL FUCKING BUTTERFLY. Jk, probs won't. Reading jokes off a phone would more than likely lose me more social butterfly points than anything.~~ 🤓
 
-Build something for yourself that tracks some data!
 
-Cheerups
 
-The world is a depressing place.
+## Wire Frame
+[Wireframe](https://tihpsay.mybalsamiq.com/mockups/5413512.png?key=13cabfab15e5f7a3a9b6120a5255cced3d3e23f1)
 
-Your task is to create an app that will allow people to create and share "cheerups" - happy little quips to brighten other peoples' days. Cheerups will be small - limited to 139 characters. Members will be able to promote Cheerups that they like and maybe even boost the reputation of the Cheerupper.
 
-Bookmarket
 
-You will create an application where users can bookmark links they want to keep.
+## Unsolved Problems
+- [ ] Have a '/data' url that I'm not really using and doesn't work anyway
+- [ ] Search Button needs to be connected to '/search'
+- [ ] '/search' needs to take more than author param
+- [ ] Alert user or gray out delete button on quotebox when quotebox is in edit-mode
+- [ ] Alert user if quoteboxes are left in edit-mode(unsaved) if user clicks away
 
-But what if users could trade bookmarks for other bookmarks? Or sell bookmarks for points? Or send bookmarks to your friends. Or something even crazier.
+- [ ] Favicon
 
-FourSquare Clone
-
-MongoDB is great for location based data like latitude and longitude. Allow users to report on their location and find nearby friends.
+- [ ] \(Optional) Set up log-in so users only see their own quotes
+- [ ] \(Optional) Allow favorite-ing or tagging/categorizations of quotes
+- [ ] \(Optional) Display most popular/favorite quotes in a carousel somewhere??
