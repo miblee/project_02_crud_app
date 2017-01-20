@@ -72,7 +72,6 @@ router.post('/update', function(req, res, next){
 
   mongo.connect(url, function(err, db){
     assert.equal(null, err);
-    // var quoteToUpdate = db.collection('quotes').find({'_id': ObjectID(quoteID)})
     db.collection('quotes').updateOne(
       {"_id": ObjectID(quoteID)},
       {$set:
@@ -89,6 +88,17 @@ router.post('/update', function(req, res, next){
 
 router.post('/delete', function(req, res, next){
 
+  var quoteID = req.body.quoteID;
+  console.log('THIS NEEDS TO WORK ASAP: ' + quoteID)
+  mongo.connect(url, function(err, db){
+    assert.equal(null, err);
+    db.collection('quotes').deleteOne({"_id": ObjectID(quoteID)},
+      function(err, docs){
+        db.close();
+        res.json(result)
+      });
+    // res.redirect('/')
+  })
 })
 
 

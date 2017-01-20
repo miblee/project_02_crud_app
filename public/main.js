@@ -15,13 +15,16 @@ $('#search').click(function(evt){
 
 // ***** DELETE TARGETED POSTS *****
 $('.delete-button').click(function(evt){
-  confirm('Are you sure? Deletes are immediate and irretrievable!', function(response){
-    if(response===true){
-      $.post('/delete', function(res){
-        console.log('res');
-      });
-    };
-  })
+  var $quotebox = $(this).closest('.quotebox');
+  var quoteID = {"quoteID": $quotebox.find('.edit-button').attr('id')}
+
+  if (confirm('Are you sure? Deletes are immediate and irretrievable!')){
+    $.post('/delete', quoteID, function(res){
+      console.log('res');
+    });
+  } else {
+    console.log('deletion cancelled')
+  }
 })
 
 
@@ -42,7 +45,7 @@ $(document.body).on('click', '.edit-button', function(evt){
 })
 
 
-// ***** SEND EDITED CONTENT TO SERVER ******
+// SEND EDITED CONTENT TO SERVER
 $(document.body).on('click', '.save-button', function(evt){
 
   $(this).attr('class',"barImgs edit-button");
@@ -68,8 +71,5 @@ $(document.body).on('click', '.save-button', function(evt){
   };
 
   console.log(quoteObject);
-  $.post('/update', quoteObject) //, function(data){
-    // console.log('Update sent!');
-  // })
-
+  $.post('/update', quoteObject)
 });
