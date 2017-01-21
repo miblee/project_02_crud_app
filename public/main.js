@@ -59,6 +59,16 @@ $(document.body).on('click', '.save-button', function(evt){
   $.post('/update', quoteObject)
 });
 
+// PLACE THIS SOMEWHERE TO INCLUDE CLIENT SIDE RENDERING
+// $.get('/somewhere', function(res){
+//     var template = $('#hbs').html();
+//     var templateScript = Handlebars.compile(template);
+//     var context = response;
+//     var html = templateScript(context);
+
+
+    // $('#FIND SOMEPLAE TO APPENDTHIS').html(html);
+// })
 
 //********* (D)ELETE ********* //
 $('.delete-button').click(function(evt){

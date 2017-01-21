@@ -60,7 +60,9 @@ router.get('/', function(req, res, next){
         quotes: quotes
       }
       // render always takes an object
-      res.render('index', data);
+      // res.render('index', data);
+      // ATTEMPTING CLIENT SIDE RENDERING HERE BUT HAVEN'T RUN ANYTHING YET
+      res.json(data)
     })
   })
 })

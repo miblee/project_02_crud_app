@@ -45,6 +45,41 @@
   }}}
 </p> --}}
 {{!-- ACTUAL BOOTSTRAP STICKY FOOTER THING *START*--}}
+
+<template id="hbs">
+  <h1>Things I've Heard People Say <img id="talkinghead" src="talkinghead.jpg"></h1>
+
+  <article class="input">
+    <form action="/insert" method="post" accept-charset="utf-8">
+      <input type="text/plain" name="author" placeholder="author">
+      <input type="text/plain" name="source" placeholder="source/book title">
+      <input type="text/plain" name="quote" placeholder="quote">
+      <button id="submit">Submit</button>
+      <button id="search">Search</button>
+    </form>
+  </article>
+
+  <article class="faves">
+    {{#each quotes}}
+      <div class="quotebox">
+        <div class="quotebar">
+        {{!-- might have to change {{<objvalue>}} to {{THIS.objvalue}}
+        if proceeding with client-side hbs rendering--}}
+          <img class="barImgs edit-button" id="{{_id}}" src="edit-button.png">
+          <img class="barImgs delete-button" id="{{_id}}" src="trash.png">
+        </div>
+        <div class="quoteBody">
+          <p>
+            <span class="author">{{author}}</span> from "
+            <span class="source">{{source}}</span>":
+          </p>
+        </div>
+        <div class="quoteText">{{quote}}</div>
+      </div>
+    {{/each}}
+  </article>
+</template>
+
 <footer class="footer">
   <div class="container">
     <p class="text-muted">©2017 M_Corp ☀️ </p>
